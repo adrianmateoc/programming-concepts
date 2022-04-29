@@ -32,7 +32,36 @@
     }
     ```
 **Liskov Substitution**
-- a
+- If class A is a subtype of class B, we should be able to replace B with A without disrupting the behavior of our program.
+    
+    For example if we have this interface.
+    ```
+    public interface Car {
+
+    void turnOnEngine();
+    void accelerate();
+    }
+    ```
+    And we implement our interface
+    ```
+    public class MotorCar implements Car {
+
+        private Engine engine;
+
+        //Constructors, getters + setters
+
+        public void turnOnEngine() {
+            //turn on the engine!
+            engine.on();
+        }
+
+        public void accelerate() {
+            //move forward!
+            engine.powerOn(1000);
+        }
+    }
+    ```
+    And now we want to use a car without engine as a electrical car, we are inherently changing the behavior of our program. Then we should rework our model into an       interface that take into account this engine-less state.
 
 **Interface Segregation**
 - a
