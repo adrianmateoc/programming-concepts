@@ -67,3 +67,20 @@ We will have several commands:
 With this option we can upload our work to the cloud.
 We will use the command "git remote add origin https://github.com/person/example.git" to link our git account to our local repository.
 To upload the files to the cloud we will use "git push -u origin main". After doing this we must access with our user and a password that will be a token obtained in github.
+
+**GITIGNORE**
+
+There are some files that we should ignore:
+- Log files
+- Files with API keys/secrets, credentials, or sensitive information
+- Useless system files like .DS_Store on macOS
+- Generated files like dist folders
+- Dependencies which can be downloaded from a package manager
+
+You can ignore files on different ways, for example, if you want to ignore a file, that's the easiest pattern, is a literal file name. Also you can ignore entire directories putting / on the end.
+
+The symbol * is used to match 0 or more characters (except /). With this command if you write *.java you will ignore all java files.
+You can also use ? to match a specific character and ! to negate a file that shouldn't be ignored. For example: If you use *.java to ignore all java files but you don't want to ignore a specific file you can use !example.java, but you can't negate a file inside a directory such doing !files/example.java
+Double asterisk ** can be used to match any number of directories.
+
+You can have one .gitignore file or some .gitignore files in each directory to ignore specific things in each one.
